@@ -46,9 +46,6 @@ class Application(tkinter.Tk):
         self.SIN_AMP = 20
         self.SIN_FRQ = 2
         self.SIN_PRD = 2
-        # self.SIN_PHA = [0, 180, 0, 180, 0]
-        # self.sineCounterStart = [0, 1.0, 0, 1.0, 0]
-        # self.sineCounterEnd = [1.0, 2.0, 1.0, 2.0, 1.0]
         self.SIN_PHA = [0, 72, 144, 216, 288]
         self.sineCounterStart = [0, 0.4, 0.8, 1.2, 1.6]
         self.sineCounterEnd = [1.0, 1.4, 1.8, 2.2, 2.6]
@@ -66,28 +63,6 @@ class Application(tkinter.Tk):
         if self.stopTimer:
             self.systemTime = 0
         else:
-            # f.write(str(self.systemTime))
-            # f.write(',')
-            # f.write(str(self.PWM_DC[0]))
-            # f.write(',')
-            # f.write(str(self.PWM_DC[1]))
-            # f.write(',')
-            # f.write(str(self.PWM_DC[2]))
-            # f.write(',')
-            # f.write(str(self.PWM_DC[3]))
-            # f.write(',')
-            # f.write(str(self.PWM_DC[4]))
-            # f.write(',')
-            # f.write(str(self.SIN_DIR[0]))
-            # f.write(',')
-            # f.write(str(self.SIN_DIR[1]))
-            # f.write(',')
-            # f.write(str(self.SIN_DIR[2]))
-            # f.write(',')
-            # f.write(str(self.SIN_DIR[3]))
-            # f.write(',')
-            # f.write(str(self.SIN_DIR[4]))
-            # f.write('\n')
             self.systemTime = self.systemTime + UPDATE_TIME/1000.0
             self.systemTime = round(self.systemTime, 2)
             print(self.systemTime)
@@ -95,8 +70,6 @@ class Application(tkinter.Tk):
             for i in range(len(self.sineCounter)):
                 self.sineCounter[i] = self.sineCounter[i] + 0.01
                 self.sineCounter[i] = round(self.sineCounter[i], 2)
-                # if i ==0:
-                #     print(self.sineCounter[i])
                 if self.sineCounter[i] >= self.sineCounterEnd[i]:
                     if self.sineDirection[i]:
                         self.sineDirection[i] = False
